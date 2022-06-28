@@ -20,7 +20,6 @@ def convert_char_to_ascii(char_array):
         ascii_array.append(ord(c))
     print(ascii_array)
     convert_number_ascii_to_binary(ascii_array)
-    return ascii_array
 
 
 def convert_number_ascii_to_binary(ascii_array):
@@ -44,21 +43,19 @@ def join_elements_to_string(binary_array):
         binary_array: string array where each element represents a binary string
     """
     binary_join = "".join(binary_array)
-    print(binary_join)
-    cut_string_array_6_length(binary_join)
+    return binary_join
 
 
-def cut_string_array_6_length(binary_join):
+def cut_string_array_6_length(binary_join, at):
     """
     Cut string into array of 6 length string
     Args:
         binary_join: character string that groups all the elements of the previous table
     """
     six_binary_array = []
-    for i in range(0, len(binary_join), 6):
-        six_binary_array.append(binary_join[i:i + 6])
-    print(six_binary_array)
-    verify_string_6_length(six_binary_array)
+    for i in range(0, len(binary_join), at):
+        six_binary_array.append(binary_join[i:i + at])
+    return six_binary_array
 
 
 def verify_string_6_length(six_binary_array):
