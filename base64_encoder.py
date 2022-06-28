@@ -112,9 +112,3 @@ def verify_string_base64(base64_str):
         equals = (8 - modulo) * "="
         base64_str = base64_str + equals
     print(base64_str)
-
-
-if __name__ == '__main__':
-    while True:
-        input_user = input("Enter a value : ")
-        char_in_array(input_user)
