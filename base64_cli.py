@@ -7,6 +7,7 @@ from base64_encoder import *
 
 
 def main(command_line=None):
+
     parser = argparse.ArgumentParser('base64 encoder/decoder')
 
     subparsers = parser.add_subparsers(dest='command')
@@ -19,7 +20,7 @@ def main(command_line=None):
     decode_parser.add_argument("-o", "--output", help="output to a file", type=str, action="store")
     decode.add_argument("-f", "--filename", help="handle a file", type=str, action="store")
 
-    encode_parser = subparsers.add_parser('decode', help='encode into base64')
+    encode_parser = subparsers.add_parser('encode', help='encode into base64')
 
     encode = encode_parser.add_mutually_exclusive_group()
 
@@ -35,15 +36,18 @@ def main(command_line=None):
 
 def args_handler(args):
     mode = args.command
+    result = ""
 
     if args.string is not None:
-        print(base64_encode(args.string))
+        result = base64_encode(args.string) if mode == "encode" else 'not implemented yet'
     if args.filename is not None:
-        print(args.filename)
+        f = open(args.filename, "r")
+        result = base64_encode(f.read()) if mode == "encode" else 'not implemented yet'
     if args.output is not None and (args.filename is not None or args.output is not None):
-        print(args.output)
+        f = open(args.output, "x")
+        f.write(result)
     else:
-        print(mode)
+        print(result)
 
 
 if __name__ == '__main__':
