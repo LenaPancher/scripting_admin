@@ -30,7 +30,7 @@ def convert_number_ascii_to_binary(ascii_array):
     for c in ascii_array:
         binary = bin(c).replace('b', '')
         binary_array.append(binary)
-        return binary_array
+    return binary_array
 
 
 def join_elements_to_string(binary_array):

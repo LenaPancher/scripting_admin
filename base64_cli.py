@@ -7,7 +7,6 @@ from base64_encoder import *
 
 
 def main(command_line=None):
-
     parser = argparse.ArgumentParser('base64 encoder/decoder')
 
     subparsers = parser.add_subparsers(dest='command')
