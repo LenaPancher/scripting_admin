@@ -1,13 +1,7 @@
 import logging
 
-# Display the logs in the logging.log file
-logging.basicConfig(
-    filename='logging.log',
-    encoding='utf-8',
-    level=logging.DEBUG,
-    format='%(asctime)s %(levelname)s %(module)s - %(funcName)s : %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S',
-)
+import logging_conf
+from logging_conf import *
 
 
 def char_in_array(input_string):
@@ -127,7 +121,8 @@ def verify_string_base64(base64_str):
     return base64_str
 
 
-def base64_encode(input):
+def base64_encode(input, log):
+    logging_conf(logging_level=log)
     logging.debug(input)
     return verify_string_base64(
         join_elements_ascii_to_string(
@@ -138,3 +133,4 @@ def base64_encode(input):
                             convert_number_ascii_to_binary(
                                 convert_char_to_ascii(
                                     char_in_array(input)))))))))
+
