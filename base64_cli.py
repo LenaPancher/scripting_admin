@@ -4,7 +4,7 @@ import argparse
 # user modules
 from base64_decoder import *
 from base64_encoder import *
-from logging_conf import *
+from logging_conf_base64 import *
 
 
 def main(command_line=None):

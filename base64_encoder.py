@@ -1,7 +1,4 @@
-import logging
-
-import logging_conf
-from logging_conf import *
+from logging_conf_base64 import *
 
 
 def char_in_array(input_string):
