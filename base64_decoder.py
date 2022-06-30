@@ -1,11 +1,11 @@
 import base64_encoder_v2 as encoder
 import re
-import logging
 
-import logging_conf
-from logging_conf import *
+from logging_conf_base64 import *
+
 """import sys
 sys.setrecursionlimit(1500)"""
+
 
 def decode_starter():
     """
@@ -26,7 +26,7 @@ def decode_starter():
             array_base64_int = convert_base_array_to_base64_int(array_base64_list_string)
             # fifth step
             array_binary = convert_list_of_int_to_binary(array_base64_int)
-            #sixth step
+            # sixth step
             array_binary_with_zero = add_zero_before_or_after_value(array_binary)
             # seventh step
             binary_join_to_single_string = convert_binary_to_ascii(array_binary_with_zero)
@@ -41,6 +41,7 @@ def decode_starter():
             check_if_value_is_base64_encoded(input_value)
     else:
         decode_starter()
+
 
 def check_if_value_is_base64_encoded(input_value):
     """
@@ -117,7 +118,7 @@ def convert_binary_to_ascii(binary_list):
     final_string = encoder.join_elements_to_string(binary_list)
     logging.info(final_string)
     return final_string
-    
+
 
 def cut_binary_string(binary_string: str, by):
     """
@@ -164,7 +165,7 @@ def remove_value_len_less_than_height(value):
             new_array.append(v)
     logging.info(new_array)
     return new_array
-    
+
 
 def remove_zero_at_beggining(value):
     """
@@ -172,7 +173,7 @@ def remove_zero_at_beggining(value):
     Args:
         value: Binary list
     """
-    #array_val = remove_value_len_less_than_height(value)
+    # array_val = remove_value_len_less_than_height(value)
     new_array = []
     new_array_of_number = []
     for v in value:
@@ -199,7 +200,7 @@ def convert_ascii_to_string(val):
     result = "".join(value_converted)
     logging.info(result)
     return result
-    
 
-if __name__ =="__main__":
+
+if __name__ == "__main__":
     decode_starter()

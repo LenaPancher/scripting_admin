@@ -1,6 +1,8 @@
 import psutil
 import argparse
-from time import time, sleep
+from time import sleep
+
+from logging_conf_administration import *
 
 
 class Metrics:
@@ -38,10 +40,10 @@ def console_print():
     metrics: Metrics = get_metrics()
     print("")
     print("# SYSTEM METRICS ")
-    print(f"# Used Memory :  {metrics.memory_usage} % ")
-    print(f"# Network Usage :  {metrics.bytes_sent} ")
-    print(f"# CPU Usage :  {metrics.cpu_usage}  %")
-    print(f"# Battery :  {metrics.battery_percent} % ")
+    mylogs.info(f"# Used Memory :  {metrics.memory_usage} % ")
+    mylogs.info(f"# Network Usage :  {metrics.bytes_sent} ")
+    mylogs.info(f"# CPU Usage :  {metrics.cpu_usage}  %")
+    mylogs.info(f"# Battery :  {metrics.battery_percent} % ")
 
 
 def get_metrics():
