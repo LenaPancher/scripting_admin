@@ -30,7 +30,7 @@ def base64_decoder(input_value, log):
             # sixth step
             array_binary_with_zero = add_zero_before_or_after_value(array_binary)
             # seventh step
-            binary_join_to_single_string = convert_binary_to_ascii(array_binary_with_zero)
+            binary_join_to_single_string = convert_list_of_string_to_single_line_string(array_binary_with_zero)
             # height step
             val = remove_value_len_less_than_height(binary_join_to_single_string)
             # ninth step
@@ -110,7 +110,7 @@ def convert_list_of_int_to_binary(list_int):
     return binary_array
 
 
-def convert_binary_to_ascii(binary_list):
+def convert_list_of_string_to_single_line_string(binary_list):
     """
     Get a binary list and join it to a single line string value
     Args:
