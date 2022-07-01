@@ -22,6 +22,9 @@ def main():
 
 
 def parser():
+    """
+    Create arguments
+    """
     args_parser = argparse.ArgumentParser('show system information')
 
     args_parser.add_argument("-i", "--interval", help="choose interval output in second", type=int, action="store")
@@ -34,6 +37,13 @@ def parser():
 
 
 def show_output(interval, host, port):
+    """
+    Program logic
+    Args:
+        interval: in second
+        host: host of InfluxBD
+        port: port of InfluxBD
+    """
     interval = interval if interval is not None else 5
     logging()
     while True:
@@ -43,7 +53,11 @@ def show_output(interval, host, port):
 
 
 def save_to_influxdb(host, port):
-    """Instantiate a connection to the InfluxDB."""
+    """Instantiate a connection to the InfluxDB.
+    Args:
+        host: host of InfluxBD
+        port: port of InfluxBD
+    """
     user = 'root'
     password = 'root'
     dbname = 'psutils'
@@ -70,6 +84,9 @@ def save_to_influxdb(host, port):
 
 
 def logging():
+    """
+    Display logs
+    """
     metrics: Metrics = get_metrics()
     mylogs.info("")
     mylogs.info("# SYSTEM METRICS ")
@@ -80,6 +97,11 @@ def logging():
 
 
 def get_metrics():
+    """
+    Retrieve metrics
+    Returns:
+
+    """
     cpu = psutil.cpu_percent()
     memory = psutil.virtual_memory()
     net = psutil.net_io_counters(pernic=True)

@@ -2,7 +2,11 @@ import logging
 
 
 def logging_conf(logging_level):
-    # Display the logs in the logging.log file
+    """
+    Configuration to display logs in the console
+    Args:
+        logging_level: Lowest severity log message that a recorder will process
+    """
     print(logging_level)
     logging.basicConfig(
         filename='logging_base64.log',

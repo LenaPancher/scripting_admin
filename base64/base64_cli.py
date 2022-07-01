@@ -8,6 +8,11 @@ from logging_conf_base64 import *
 
 
 def main(command_line=None):
+    """
+    Create arguments
+    Args:
+        command_line:
+    """
     parser = argparse.ArgumentParser('base64 encoder/decoder')
 
     subparsers = parser.add_subparsers(dest='command')
@@ -37,6 +42,11 @@ def main(command_line=None):
 
 
 def args_handler(args):
+    """
+    Handle subparser and argument logic
+    Args:
+        args: argument
+    """
     mode = args.command
     result = ""
 

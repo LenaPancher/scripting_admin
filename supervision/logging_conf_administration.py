@@ -1,5 +1,6 @@
 import logging
 
+# Configuration to display logs in the console
 mylogs = logging.getLogger(__name__)
 mylogs.setLevel(logging.DEBUG)
 
