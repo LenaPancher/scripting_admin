@@ -1,4 +1,3 @@
-import base64_encoder_v2 as encoder
 import re
 
 from logging_conf_base64 import *
