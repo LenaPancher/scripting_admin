@@ -9,7 +9,7 @@ module.
 
 ```bash
 $ python3 -V
-$ pip install requirement.txt
+$ pip install requirements.txt
 ```
 
 ## Usage
