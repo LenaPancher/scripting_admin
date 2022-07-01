@@ -50,15 +50,16 @@ def join_elements_to_string(binary_array):
     return binary_join
 
 
-def cut_string_array_6_length(binary_join):
+def cut_string_array_6_length(binary_join, by = 6):
     """
     Cut string into array of 6 length string
     Args:
         binary_join: character string that groups all the elements of the previous table
+        by
     """
     six_binary_array = []
-    for i in range(0, len(binary_join), 6):
-        six_binary_array.append(binary_join[i:i + 6])
+    for i in range(0, len(binary_join), by):
+        six_binary_array.append(binary_join[i:i + by])
     logging.info(six_binary_array)
     return six_binary_array
 
