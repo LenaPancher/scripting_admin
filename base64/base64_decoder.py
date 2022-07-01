@@ -1,18 +1,19 @@
 import re
 
+import base64_encoder as encoder
 from logging_conf_base64 import *
 
 """import sys
 sys.setrecursionlimit(1500)"""
 
 
-def base64_decoder(input, log):
+def base64_decoder(input_value, log):
     """
     The starter method
     Here we call all our methods
     """
     logging_conf(logging_level=log)
-    logging.debut(input)
+    logging.debug(input_value)
 
     if len(input_value) > 0:
         matches = check_if_value_is_base64_encoded(input_value)
@@ -40,7 +41,7 @@ def base64_decoder(input, log):
             print("Veuillez saisir une chaine de caratère encoder en base 64")
             check_if_value_is_base64_encoded(input_value)
     else:
-        decode_starter()
+        base64_decoder(input_value, log)
 
 
 def check_if_value_is_base64_encoded(input_value):
