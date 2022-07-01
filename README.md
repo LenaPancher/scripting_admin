@@ -4,10 +4,12 @@ This repo contains every python projects made for the scripting admin course in 
 
 ## Installation
 
-You need to make sure to use at least python 3 to be able to run this project.
+You need to make sure to use at least python 3 to be able to run this project, and that you have installed the "pip"
+module.
 
 ```bash
 $ python3 -V
+$ pip install requirement.txt
 ```
 
 ## Usage
