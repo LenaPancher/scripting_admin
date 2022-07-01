@@ -6,12 +6,13 @@ from logging_conf_base64 import *
 sys.setrecursionlimit(1500)"""
 
 
-def decode_starter():
+def base64_decoder(input, log):
     """
     The starter method
     Here we call all our methods
     """
-    input_value = input("enter value base64 : ")
+    logging_conf(logging_level=log)
+    logging.debut(input)
 
     if len(input_value) > 0:
         matches = check_if_value_is_base64_encoded(input_value)
@@ -199,7 +200,3 @@ def convert_ascii_to_string(val):
     result = "".join(value_converted)
     logging.info(result)
     return result
-
-
-if __name__ == "__main__":
-    decode_starter()

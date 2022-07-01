@@ -54,7 +54,7 @@ def args_handler(args):
                 logging_conf(logging_level=logging.CRITICAL)
         else:
             logging_conf(logging_level=logging.DEBUG)
-        result = base64_encode(args.string, args.log) if mode == "encode" else 'not implemented yet'
+        result = base64_encode(args.string, args.log) if mode == "encode" else base64_decoder(args.string, args.log)
     if args.filename is not None:
         f = open(args.filename, "r")
         if args.log is not None:
@@ -70,7 +70,7 @@ def args_handler(args):
                 logging_conf(logging_level=logging.CRITICAL)
         else:
             logging_conf(logging_level=logging.DEBUG)
-        result = base64_encode(f.read(), args.log) if mode == "encode" else 'not implemented yet'
+        result = base64_encode(f.read(), args.log) if mode == "encode" else base64_decoder(f.read, args.log)
     if args.output is not None and (args.filename is not None or args.output is not None):
         f = open(args.output, "x")
         f.write(result)
